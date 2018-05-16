@@ -12,7 +12,7 @@ import App from '../../isomorphic/src/App';
 import Theme from '../../isomorphic/src/components/theme';
 
 function renderFullPage(html, css) {
-    const indexHtml = readFileSync(resolve(join('isomorphic', 'public', 'index.html')));
+    const indexHtml = readFileSync(resolve(join('isomorphic', 'build', 'index.html')));
     return indexHtml.toString()
                     .replace(
                         '<div id="root"></div>',
