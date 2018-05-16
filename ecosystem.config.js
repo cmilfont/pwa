@@ -11,6 +11,10 @@ module.exports = {
             ignore_watch: [".git", "node_modules", "isomorphic"],
             exec_interpreter: "babel-node",
             interpreter_args: "--inspect",
+            env: {
+                COMMON_VARIABLE: 'true',
+                NODE_ENV: 'development'
+            },
             env_development: {
                 PORT: 3001
             },
