@@ -7,8 +7,8 @@ module.exports = {
         {
             name: "beerswarm",
             script: "bin/server.js",
-            watch: ["bin"],
-            ignore_watch: [".git", "node_modules", "isomorphic"],
+            watch: ["bin", "isomorphic/src"],
+            ignore_watch: [".git", "node_modules"],
             exec_interpreter: "babel-node",
             interpreter_args: "--inspect",
             env: {

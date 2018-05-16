@@ -19,10 +19,16 @@
         "babel-register": "^6.26.0",
         "clean-css": "^4.1.11",
         "express": "^4.16.3",
+        "history": "^4.7.2",
         "material-ui": "^1.0.0-beta.47",
         "pm2": "^2.10.3",
         "react": "^16.3.2",
         "react-dom": "^16.3.2",
-        "react-jss": "^8.4.0"
+        "react-jss": "^8.4.0",
+        "react-redux": "^5.0.7",
+        "react-router": "^4.2.0",
+        "react-router-redux": "^4.0.8",
+        "redux": "^4.0.0",
+        "redux-devtools-extension": "^2.13.2"
     }
 }
