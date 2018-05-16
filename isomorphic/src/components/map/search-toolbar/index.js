@@ -1,0 +1,66 @@
+import React from 'react';
+import Toolbar from 'material-ui/Toolbar';
+import IconButton from 'material-ui/IconButton';
+import SearchIcon from '@material-ui/icons/Search';
+import GpsFixedIcon from '@material-ui/icons/GpsFixed';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import TextField from 'material-ui/TextField';
+import { InputAdornment } from 'material-ui/Input';
+import { withStyles } from 'material-ui/styles';
+
+const styles = theme => ({
+  searchToolbar: {
+    position: 'relative',
+    background: '#fff',
+    borderRadius: '2px',
+    margin: '16px',
+    width: '392px',
+    maxHeight: '48px',
+    minHeight: '48px',
+    borderBottom: '1px solid transparent',
+    transitionProperty: 'background,box-shadow',
+    transitionDuration: '0.3s',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02)',
+  },
+  [theme.breakpoints.down('sm')]: {
+    searchToolbar: {
+      width: '100%',
+    },
+  },
+});
+
+class SearchToolbar extends React.PureComponent{
+  render() {
+    const {
+      classes,
+    } = this.props;
+
+    return (
+      <Toolbar className={classes.searchToolbar}>
+        <TextField
+          color="default"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+            disableUnderline: true,
+            inputProps: {
+              style: { width: '100%' },
+            },
+          }}
+          fullWidth
+        />
+        <IconButton className={classes.menuButton} color="default">
+          <GpsFixedIcon />
+        </IconButton>
+        <IconButton className={classes.menuButton} color="default">
+          <MoreVertIcon />
+        </IconButton>
+      </Toolbar>
+    );
+  }
+}
+
+export default withStyles(styles)(SearchToolbar);
