@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import SearchToolbar from './components/map/search-toolbar';
+import { renderRoutes } from 'react-router-config';
+import routes from './routes';
 
 class App extends Component {
   render() {
@@ -10,6 +12,9 @@ class App extends Component {
           </header>
           <div>
             <SearchToolbar />
+          </div>
+          <div>
+            {renderRoutes(routes)}
           </div>
         </div>
     );
