@@ -9,6 +9,7 @@ class Theme extends React.Component {
     const theme = createMuiTheme({
       palette: {
         primary: amber,
+        secondary: blue,
         accent: blue,
         type: 'light',
       },

@@ -10,6 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 import UserMenu from '../user-menu';
 import Gps from '../gps';
 import PushNotificationButton from '../push-notification-button';
+import Offline from '../offline';
 
 const styles = theme => ({
   searchToolbar: {
@@ -58,6 +59,7 @@ class SearchToolbar extends React.PureComponent{
         />
         <Gps />
         <PushNotificationButton />
+        <Offline />
         <UserMenu />
       </Toolbar>
     );
