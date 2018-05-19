@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import Attend from './attend';
 
 const styles = theme => ({
     root: {
@@ -22,6 +23,8 @@ class Place extends React.PureComponent {
         return (
             <div className={classes.root}>
                 {place.name}
+
+                <Attend />
             </div>
         );
     }
