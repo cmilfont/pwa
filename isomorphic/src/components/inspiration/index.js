@@ -43,18 +43,18 @@ class Inspiration extends React.PureComponent {
       <div className={classes.root}>
         <div className={classes.cardWrapper}>
           <Card
+            href="/destination"
+            title="Onde ir"
+            imageUrl={`https://picsum.photos/640/480`}
+          />
+          <Card
             href="/experiences"
             title="Experiências"
             imageUrl={`https://picsum.photos/640/480`}
           />
           <Card
-            href="/destination"
-            title="Lugares"
-            imageUrl={`https://picsum.photos/640/480`}
-          />
-          <Card
-            href="/destination"
-            title="Destinos"
+            href="/places"
+            title="Onde beber"
             imageUrl={`https://picsum.photos/640/480`}
           />
         </div>

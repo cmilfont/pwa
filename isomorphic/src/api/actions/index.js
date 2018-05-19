@@ -12,3 +12,6 @@ export const setPushNotificationSubscriptionStatus = createAction(constants.SET_
 
 export const locateMe = createAction(constants.LOCATE_ME);
 export const myPosition = createAction(constants.MY_POSITION);
+
+export const loadPlace = createAction(constants.LOAD_PLACE);
+export const loadedPlace = createAction(constants.LOAD_PLACE_SUCCESS);

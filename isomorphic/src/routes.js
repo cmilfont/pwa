@@ -2,6 +2,8 @@ import Experiences from './components/experiences';
 import Destinations from './components/destinations';
 import Experience from './components/experience';
 import Inspiration from './components/inspiration';
+import Places from './components/places';
+import Place from './components/place';
 
 export default [
     {
@@ -20,5 +22,13 @@ export default [
     {
         path: '/destination/:destinationSlug',
         component: Destinations,
+    },
+    {
+        path: '/places/:placeSlug',
+        component: Place,
+    },
+    {
+        path: '/places',
+        component: Places,
     }
 ];
