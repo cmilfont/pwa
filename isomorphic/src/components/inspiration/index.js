@@ -10,10 +10,12 @@ const styles = theme => ({
     height: '100%',
   },
   cardWrapper: {
-    display: 'block',
+    display: 'flex',
     textAlign: 'center',
+    paddingBottom: '20px',
     [theme.breakpoints.down('md')]: {
       overflowX: 'scroll',
+      overflowY: 'hidden',
       whiteSpace: 'nowrap',
     },
   },
@@ -40,9 +42,21 @@ class Inspiration extends React.PureComponent {
     return (
       <div className={classes.root}>
         <div className={classes.cardWrapper}>
-          <Card title="Experiências" imageUrl={`https://picsum.photos/640/480`} />
-          <Card title="Lugares" imageUrl={`https://picsum.photos/640/480`} />
-          <Card title="Destinos" imageUrl={`https://picsum.photos/640/480`} />
+          <Card
+            href="/experiences"
+            title="Experiências"
+            imageUrl={`https://picsum.photos/640/480`}
+          />
+          <Card
+            href="/destination"
+            title="Lugares"
+            imageUrl={`https://picsum.photos/640/480`}
+          />
+          <Card
+            href="/destination"
+            title="Destinos"
+            imageUrl={`https://picsum.photos/640/480`}
+          />
         </div>
         <List>
           {packages || this.packages}
