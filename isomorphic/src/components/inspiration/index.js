@@ -25,6 +25,7 @@ class Inspiration extends React.PureComponent {
       .fill(null)
       .map((_, index) => (
         <Tile
+          key={`tile-${index}`}
           imageUrl={`https://picsum.photos/640/480?image=${Math.floor(Math.random() * 200)}`}
           title={`Title${index}`}
           subtitle={`Subtitle${index}`}
