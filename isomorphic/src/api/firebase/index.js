@@ -1,4 +1,4 @@
-import firebase from 'firebase/app';
+import firebase from 'firebase';
 
 const config = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -10,6 +10,7 @@ const config = {
 }
 
 const firebaseApp = firebase.initializeApp(config);
+console.log(firebaseApp);
 firebaseApp.auth().useDeviceLanguage();
 
 export default firebaseApp;
