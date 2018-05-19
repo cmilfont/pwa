@@ -6,12 +6,15 @@ import watchLoginUser from './login-user';
 import watchLogoutUser from './logout-user';
 import watchPushNotification from './push-notification';
 
+import watchMyPosition from './position';
+
 export default function* rootSaga(firebase) {
   yield all([
     fork(watchAuthStateChanged, firebase),
     fork(watchLoginAnonymous, firebase),
     fork(watchLoginUser, firebase),
     fork(watchLogoutUser, firebase),
+    fork(watchMyPosition),
     //fork(watchPushNotification),
   ]);
 };

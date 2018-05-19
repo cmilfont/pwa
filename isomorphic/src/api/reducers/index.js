@@ -3,6 +3,10 @@ import * as constants from '../constants';
 
 const defaultState = {
   user: {},
+  myPosition: {
+    latitude: -15,
+    longitude: -45,
+  }
 };
 
 export default handleActions(
@@ -17,6 +21,10 @@ export default handleActions(
     }),
     [constants.SET_PUSH_NOTIFICATION_SUBSCRIPTION_STATUS]: (state, action) => ({
       pushNotificationSubscriptionStatus: action.payload,
+    }),
+    [constants.MY_POSITION]: (state, action) => ({
+      ...state,
+      myPosition: action.payload
     }),
   },
   defaultState,

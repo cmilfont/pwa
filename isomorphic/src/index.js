@@ -15,7 +15,7 @@ import firebase from './api/firebase';
 import registerServiceWorker from './registerServiceWorker';
 
 import 'leaflet/dist/leaflet.css';
-import './index.css'
+import './index.css';
 
 function prepareStoreHistory() {
   const result = {

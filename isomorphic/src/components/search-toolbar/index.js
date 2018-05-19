@@ -1,13 +1,14 @@
 import React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
+
 import SearchIcon from '@material-ui/icons/Search';
-import GpsFixedIcon from '@material-ui/icons/GpsFixed';
+
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { withStyles } from '@material-ui/core/styles';
 
 import UserMenu from '../user-menu';
+import Gps from '../gps';
 import PushNotificationButton from '../push-notification-button';
 
 const styles = theme => ({
@@ -23,6 +24,7 @@ const styles = theme => ({
     transitionProperty: 'background,box-shadow',
     transitionDuration: '0.3s',
     boxShadow: '0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02)',
+    zIndex: 1000,
   },
   [theme.breakpoints.down('sm')]: {
     searchToolbar: {
@@ -54,9 +56,7 @@ class SearchToolbar extends React.PureComponent{
           }}
           fullWidth
         />
-        <IconButton color="default">
-          <GpsFixedIcon />
-        </IconButton>
+        <Gps />
         <PushNotificationButton />
         <UserMenu />
       </Toolbar>
