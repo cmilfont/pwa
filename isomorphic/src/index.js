@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-//import createSagaMiddleware from 'redux-saga';
+import createSagaMiddleware from 'redux-saga';
 import createHistory from 'history/createBrowserHistory';
 import { render, hydrate } from 'react-dom';
 
@@ -11,9 +11,9 @@ import registerServiceWorker from './registerServiceWorker';
 // import 'typeface-roboto';
 
 import App from './App';
-// import sagas from './api/sagas';
+import sagas from './api/sagas';
 import reducer from './api/reducers';
-// import firebase from './api/firebase';
+import firebase from './api/firebase';
  
 function prepareStoreHistory() {
   const result = {
@@ -21,15 +21,15 @@ function prepareStoreHistory() {
     store: undefined,
     saga: undefined,
   }
-  //const sagaMiddleware = createSagaMiddleware();
+  const sagaMiddleware = createSagaMiddleware();
   const middlewares = [
     routerMiddleware(result.history),
-    //sagaMiddleware,
+    sagaMiddleware,
   ];
   const composeEnhancers = composeWithDevTools({});
   const composed = composeEnhancers(applyMiddleware(...middlewares));
   result.store = createStore(reducer, composed);
-  //sagaMiddleware.run(sagas, firebase);
+  sagaMiddleware.run(sagas, firebase);
 
   return result;
 }
