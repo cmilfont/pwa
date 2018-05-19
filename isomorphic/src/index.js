@@ -17,13 +17,22 @@ import registerServiceWorker from './registerServiceWorker';
 import 'leaflet/dist/leaflet.css';
 import './index.css';
 
+const sagaMiddleware = createSagaMiddleware();
+// let tasks;
+
+// function registerOffline() {
+//   const { online } = navigator;
+//   tasks.cancel();
+//   tasks = sagaMiddleware.run(sagasOffline, firebase);
+// }
+
 function prepareStoreHistory() {
   const result = {
     history: createHistory(),
     store: undefined,
     saga: undefined,
   }
-  const sagaMiddleware = createSagaMiddleware();
+
   const middlewares = [
     routerMiddleware(result.history),
     sagaMiddleware,
@@ -32,6 +41,14 @@ function prepareStoreHistory() {
   const composedMiddlewares = enhancedCompose(applyMiddleware(...middlewares));
   result.store = createStore(reducer, composedMiddlewares);
   sagaMiddleware.run(sagas, firebase);
+
+  // window.addEventListener('offline', () => {
+  //   const { online } = navigator;
+  //   registerOffline();
+  //   result.store.dispatch({
+  //     type: 'GLOBAL_OFFLINE',
+  //   })
+  // })
 
   return result;
 }

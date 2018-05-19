@@ -4,9 +4,10 @@ import OfflinePin from '@material-ui/icons/OfflinePin';
 
 class Offline extends React.PureComponent {
     render() {
-        const { offlinePin } = this.props;
+        const { offlinePin, offline } = this.props;
+        const color = offline? "secondary" : "default";
         return (
-            <IconButton color="secondary" onClick={offlinePin}>
+            <IconButton color={color} onClick={offlinePin}>
                 <OfflinePin />
             </IconButton>
         )

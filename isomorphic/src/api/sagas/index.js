@@ -9,6 +9,8 @@ import watchPushNotification from './push-notification';
 import watchMyPosition from './position';
 
 import watchPlace from './places/load-place';
+import watchPlacePin from './places/offline';
+import WatchPlaceVerify from './places/verify-offline';
 
 export default function* rootSaga(firebase) {
   yield all([
@@ -17,7 +19,10 @@ export default function* rootSaga(firebase) {
     fork(watchLoginUser, firebase),
     fork(watchLogoutUser, firebase),
     fork(watchMyPosition),
+    
     fork(watchPlace),
+    fork(watchPlacePin),
+    fork(WatchPlaceVerify),
     //fork(watchPushNotification),
   ]);
 };

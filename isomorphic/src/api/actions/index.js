@@ -15,3 +15,8 @@ export const myPosition = createAction(constants.MY_POSITION);
 
 export const loadPlace = createAction(constants.LOAD_PLACE);
 export const loadedPlace = createAction(constants.LOAD_PLACE_SUCCESS);
+
+export const offlinePin = createAction(constants.OFFLINE_PIN);
+export const offlinePinSuccess = createAction(constants.OFFLINE_PIN_SUCCESS);
+
+export const offlineVerified = createAction(constants.OFFLINE_VERIFIED);
