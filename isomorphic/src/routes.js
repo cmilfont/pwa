@@ -1,21 +1,24 @@
-import React from 'react';
+import Experiences from './components/experiences';
+import Destinations from './components/destinations';
+import Experience from './components/experience';
+import Inspiration from './components/inspiration';
 
 export default [
     {
         path: '/',
-        component: () => {
-            return (
-                <div>Raiz</div>
-            )
-        },
-        exact: true
+        component: Inspiration,
+        exact: true,
     },
     {
-        path: '/experiences/:experiencesSlug?',
-        component: () => {
-            return (
-                <div>Experiences</div>
-            )
-        }
+        path: '/experiences/:experienceSlug?',
+        component: Experiences,
+    },
+    {
+        path: '/destination/:destinationSlug/:experienceSlug',
+        component: Experience,
+    },
+    {
+        path: '/destination/:destinationSlug',
+        component: Destinations,
     }
-]
+];

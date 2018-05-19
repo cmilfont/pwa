@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
-import SearchToolbar from './components/map/search-toolbar';
-import { renderRoutes } from 'react-router-config';
-import routes from './routes';
+import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
-class App extends Component {
+import Theme from './components/theme';
+import Home from './components/home';
+
+class App extends React.Component {
   render() {
+    const { initialWidth = 'sm' } = this.props;
+
     return (
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <div>
-            <SearchToolbar />
-          </div>
-          <div>
-            {renderRoutes(routes)}
-          </div>
-        </div>
+      <React.Fragment>
+        <CssBaseline />
+        <Theme>
+          <Home initialWidth={initialWidth} />
+        </Theme>
+      </React.Fragment>
     );
   }
 }

@@ -35,7 +35,6 @@ export default function register() {
       if (isLocalhost) {
         // This is running on localhost. Lets check if a service worker still exists or not.
         checkValidServiceWorker(swUrl);
-
         // Add some additional logging to localhost, pointing developers to the
         // service worker/PWA documentation.
         navigator.serviceWorker.ready.then(() => {
@@ -115,3 +114,26 @@ export function unregister() {
     });
   }
 }
+
+// function subscribePushNotification() {
+//   navigator.serviceWorker.ready.then(registration => {
+  
+//     if (!registration.pushManager) {
+//       return
+//     }
+//     registration
+//       .pushManager
+//       .subscribe({
+//         userVisibleOnly: true, //Always display notifications
+//         applicationServerKey: convertedVapidKey
+//       })
+//       .then(subscription => {
+//         console.log('User is subscribed:', subscription);
+//         fetch(process.env.REACT_APP_PUSH_NOTIFICATION_SERVER + "/register", {
+//           body: JSON.stringify(subscription),
+//           method: 'POST',
+//         })
+//       })
+//       .catch(err => console.error("Push subscription error: ", err));
+//   })
+// }

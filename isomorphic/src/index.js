@@ -7,14 +7,13 @@ import createSagaMiddleware from 'redux-saga';
 import createHistory from 'history/createBrowserHistory';
 import { render, hydrate } from 'react-dom';
 
-import registerServiceWorker from './registerServiceWorker';
-// import 'typeface-roboto';
-
 import App from './App';
 import sagas from './api/sagas';
 import reducer from './api/reducers';
 import firebase from './api/firebase';
- 
+
+import registerServiceWorker from './registerServiceWorker';
+
 function prepareStoreHistory() {
   const result = {
     history: createHistory(),
@@ -26,9 +25,9 @@ function prepareStoreHistory() {
     routerMiddleware(result.history),
     sagaMiddleware,
   ];
-  const composeEnhancers = composeWithDevTools({});
-  const composed = composeEnhancers(applyMiddleware(...middlewares));
-  result.store = createStore(reducer, composed);
+  const enhancedCompose = composeWithDevTools({});
+  const composedMiddlewares = enhancedCompose(applyMiddleware(...middlewares));
+  result.store = createStore(reducer, composedMiddlewares);
   sagaMiddleware.run(sagas, firebase);
 
   return result;
@@ -37,9 +36,7 @@ function prepareStoreHistory() {
 const rootEl = document.getElementById('root');
 const isPreRendered = Boolean(rootEl.childElementCount > 0);
 
-const renderer = isPreRendered
-? hydrate
-: render;
+const renderer = isPreRendered ? hydrate : render;
 
 const { history, store } = prepareStoreHistory();
 
