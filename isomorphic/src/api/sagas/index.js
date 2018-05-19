@@ -5,7 +5,7 @@ import watchLoginAnonymous from './login-anonymous';
 
 export default function* rootSaga(firebase) {
     yield all([
-        fork(watchAuthStateChanged, firebase), 
+        fork(watchAuthStateChanged, firebase),
         fork(watchLoginAnonymous, firebase),
         // fork(watchLoginUser, firebase),
         // fork(WatchLogoutUser, firebase),

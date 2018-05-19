@@ -1,12 +1,12 @@
 import React from 'react';
-import Toolbar from 'material-ui/Toolbar';
-import IconButton from 'material-ui/IconButton';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import GpsFixedIcon from '@material-ui/icons/GpsFixed';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import TextField from 'material-ui/TextField';
-import { InputAdornment } from 'material-ui/Input';
-import { withStyles } from 'material-ui/styles';
+import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   searchToolbar: {
