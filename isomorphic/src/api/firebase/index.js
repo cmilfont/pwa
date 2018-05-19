@@ -10,7 +10,6 @@ const config = {
 }
 
 const firebaseApp = firebase.initializeApp(config);
-console.log(firebaseApp);
 firebaseApp.auth().useDeviceLanguage();
 
 export default firebaseApp;
