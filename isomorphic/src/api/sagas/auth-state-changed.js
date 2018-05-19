@@ -11,7 +11,7 @@ function createSocketChannel(firebase) {
 }
 
 export default function* watch(firebase) {
-    const socketChannel = yield call(createSocketChannel);
+    const socketChannel = yield call(createSocketChannel, firebase);
     while(true) {
         const payload = yield take(socketChannel);
         if (payload.email) {
